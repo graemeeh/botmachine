@@ -65,12 +65,10 @@ def program():
             if l=="bot-o-tron":
                 comment_model = markovify.Text(guido)
                 i.reply(comment_model.make_sentence(test_output=False))
-                print("ah, gabagool")
             else:
                 user=reddit.redditor(l).comments.new()
                 text=rip(user)
                 i.reply(markovify.Text(text).make_sentence(tries=100))
-                
             sleep(2)
             text=""
             print("replied to: "+i.id)
